@@ -1,10 +1,10 @@
 :root {
-  --bg-dark: #0c0c0c;
-  --bg-card: #1a1a2e;
-  --primary: #8b5cf6;
-  --secondary: #9333ea;
-  --accent: #ffffff;
-  --text-muted: #cbd5e1;
+  --bg-dark: #0c0c0c;      /* Main dark background */
+  --bg-card: #1a1a2e;      /* Card / section background */
+  --primary: #8b5cf6;      /* Main purple */
+  --secondary: #9333ea;    /* Secondary purple */
+  --accent: #ffffff;       /* Main text / highlights */
+  --text-muted: #cbd5e1;   /* Muted text */
 }
 
 /* ---------- GLOBAL ---------- */
@@ -22,7 +22,6 @@ body {
 }
 
 /* ---------- SECTIONS ---------- */
-
 section {
   min-height: 100vh;
   display: flex;
@@ -34,7 +33,7 @@ section {
 
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,13 +73,13 @@ section {
   right: 30px;
   font-size: 0.85rem;
   letter-spacing: 3px;
-  color: #8b5cf6;
+  color: var(--primary);
   opacity: 0.9;
   z-index: 2;
 }
 
 .code-symbol {
-  color: #9333ea;
+  color: var(--secondary);
 }
 
 /* Content */
@@ -136,11 +135,11 @@ section {
 }
 
 .code-keyword {
-  color: #9333ea;
+  color: var(--secondary);
 }
 
 .code-string {
-  color: #8b5cf6;
+  color: var(--primary);
 }
 
 /* Name */
@@ -151,7 +150,7 @@ section {
 }
 
 .hero-name span {
-  color: #8b5cf6;
+  color: var(--primary);
 }
 
 /* Role */
@@ -183,8 +182,8 @@ section {
   border-radius: 999px;
   font-size: 0.95rem;
   text-decoration: none;
-  color: #fff;
-  background: linear-gradient(135deg, #8b5cf6, #9333ea);
+  color: var(--accent);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   transition: all 0.3s ease;
 }
 
@@ -195,11 +194,11 @@ section {
 
 .hero-btn.outline {
   background: transparent;
-  border: 1px solid #8b5cf6;
+  border: 1px solid var(--primary);
 }
 
 .hero-btn.outline:hover {
-  background: #8b5cf6;
+  background: var(--primary);
 }
 
 /* Responsive */
@@ -218,14 +217,13 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* ---------- ABOUT ME HEADING ---------- */
 .about-heading {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #8b5cf6;
+  color: var(--primary);
   text-align: center;
 }
 
@@ -252,7 +250,7 @@ section {
 .about-title {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #a29fa9;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
@@ -287,7 +285,7 @@ section {
   gap: 0.4rem;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #8b5cf6, #9333ea);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--accent);
   font-size: 0.85rem;
 }
@@ -327,10 +325,9 @@ section {
   }
 }
 
-
 /* ---------- PROJECTS (VERTICAL) ---------- */
 .projects {
-  background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
   text-align: center;
 }
 
@@ -364,12 +361,12 @@ section {
   min-width: 70px;
   height: 70px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #8b5cf6, #9333ea);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: white;
+  color: var(--accent);
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
 }
 
@@ -381,6 +378,7 @@ section {
 .project-content h3 {
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
+  color: var(--accent);
 }
 
 .project-desc {
@@ -402,10 +400,9 @@ section {
   padding: 0.45rem 1rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  background: linear-gradient(135deg, #8b5cf6, #9333ea);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--accent);
 }
-
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 650px) {
@@ -419,6 +416,7 @@ section {
     text-align: center;
   }
 }
+
 /* ---------- Clean Bold Headings ---------- */
 .animated-header {
   position: relative;
@@ -431,7 +429,7 @@ section {
   font-weight: 900;
   letter-spacing: 2px;
   display: inline-block;
-  color: #8b5cf6; /* main purple color */
+  color: var(--primary);
   text-transform: uppercase;
   line-height: 1.2;
   transition: transform 0.3s ease;
@@ -452,10 +450,9 @@ section {
   font-size: 2.2rem;
 }
 
-
 /* ---------- CONTACT SECTION ---------- */
 .contact {
-  background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
   text-align: center;
   padding: 4rem 2rem;
   position: relative;
@@ -465,7 +462,7 @@ section {
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #8b5cf6, #9333ea);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
@@ -485,7 +482,7 @@ section {
 }
 
 .highlight-name {
-  color: #8b5cf6; /* purple accent */
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -516,12 +513,12 @@ section {
 }
 
 .info-item:hover {
-  color: #8b5cf6;
+  color: var(--primary);
   transform: translateY(-2px);
 }
 
 .info-icon {
-  color: #8b5cf6;
+  color: var(--primary);
   font-size: 1.2rem;
 }
 
@@ -540,8 +537,8 @@ section {
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #fff;
-  background: linear-gradient(135deg, #8b5cf6, #9333ea);
+  color: var(--accent);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -570,7 +567,7 @@ section {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  background: #111;
+  background: var(--bg-dark);
   border: 1px solid #333;
   padding: 0.9rem 1.1rem;
   border-radius: 12px;
@@ -609,8 +606,8 @@ section {
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #8b5cf6, #9333ea);
+  color: var(--accent);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -642,9 +639,8 @@ section {
 }
 
 /* ---------- FOOTER ---------- */
-/* ---------- FOOTER ---------- */
 .footer {
-  background: #111;
+  background: var(--bg-card);
   padding: 2.5rem 1rem;
   text-align: center;
   border-top: 1px solid rgba(139,92,246,0.2);
@@ -688,4 +684,4 @@ section {
 .social-links a:hover {
   color: var(--primary);
   transform: translateY(-4px);
-} 
+}
