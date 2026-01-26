@@ -1,16 +1,87 @@
-# React + Vite
+## Pranali Deokar — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal portfolio website, built to showcase my projects, skills, and experience in web development.
 
-Currently, two official plugins are available:
+🔗 Live Website:  
+https://portfolio-n3xu9d6rx-pranali-deokars-projects.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I am a BBA-CA student and aspiring web developer with a strong interest in building clean, responsive, and user-friendly web applications.  
+This portfolio represents my learning journey and practical experience through projects.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Responsive and modern UI  
+- Built with React components  
+- Projects showcase section  
+- About and Contact sections  
+- Resume download  
+- Fast performance using Vite  
+
+---
+
+## Tech Stack
+
+- Frontend: React, JavaScript
+- Styling: CSS
+- Build Tool: Vite
+- Deployment: Vercel
+
+---
+
+## Project Structure
+
+src/
+├── components/
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+├── assets/
+│   ├── profile.png
+│   └── resume.pdf
+├── App.jsx
+├── main.jsx
+└── index.css
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js
+- npm
+
+### Run Locally
+
+git clone https://github.com/deokarpranali02/portfolio.git  
+cd portfolio  
+npm install  
+npm run dev  
+
+---
+
+## Deployment
+
+This project is deployed using Vercel.  
+Any push to the main branch triggers automatic deployment.
+
+---
+
+## Contact
+
+GitHub: https://github.com/deokarpranali02  
+LinkedIn: Add your LinkedIn link here  
+Email: Add your email here  
+
+---
+
+## License
+
+This project is for personal portfolio use.
