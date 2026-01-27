@@ -7,19 +7,30 @@ const Contact = () => {
       <h2 className="section-title">Contact Me</h2>
 
       <p className="contact-text animated-text">
-        Hi! I’m <span className="highlight-name">Pranali</span>, a BCA student exploring web development. Feel free to connect, collaborate, or just chat! 👋
+        Hi! I’m <span className="highlight-name">Pranali</span>, a BCA student exploring web development.
+        Feel free to connect, collaborate, or just chat! 👋
       </p>
 
       {/* Contact Info */}
-      <div className="contact-info">
-        <div className="info-item">📍 Maharashtra</div>
-        <div className="info-item">📞 +91-8623072913</div>
-        <div className="info-item">📧 deokarpranali02@gmail.com</div>
-      </div>
+      <div class="info-item">
+      <span class="info-icon">📧</span>
+       <a href="mailto:deokarpranali02@gemail.com">deokarpranali02@gmail.com</a>
+</div>
+
+      <div class="info-item">
+      <span class="info-icon">📞</span>
+      <a href="tel:+91-8623072913">+91 8623072913</a>
+</div>
+
+       <div class="info-item">
+       <span class="info-icon">📍</span>
+       <span>Maharashtra, India</span>
+</div>
+
 
       {/* Resume Button */}
       <div className="contact-actions">
-        <a href="public/resume.pdf" download className="resume-btn">
+        <a href="/resume.pdf" download className="resume-btn">
           <FaDownload /> Download Resume
         </a>
       </div>
@@ -30,7 +41,7 @@ const Contact = () => {
         action="https://formsubmit.co/deokarpranali02@gmail.com"
         method="POST"
       >
-        <input type="hidden" name="_captcha" value="false" /> {/* Disable captcha if desired */}
+        <input type="hidden" name="_captcha" value="false" />
 
         <div className="input-group">
           <FaUser />
@@ -44,7 +55,7 @@ const Contact = () => {
 
         <div className="input-group">
           <FaCommentDots />
-          <textarea name="message" placeholder="Your Message" required></textarea>
+          <textarea name="message" placeholder="Your Message" required />
         </div>
 
         <button type="submit" className="send-btn">

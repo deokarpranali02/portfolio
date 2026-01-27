@@ -1,11 +1,12 @@
 :root {
-  --bg-dark: #0c0c0c;      /* Main dark background */
-  --bg-card: #1a1a2e;      /* Card / section background */
-  --primary: #8b5cf6;      /* Main purple */
-  --secondary: #9333ea;    /* Secondary purple */
-  --accent: #ffffff;       /* Main text / highlights */
-  --text-muted: #cbd5e1;   /* Muted text */
+  --bg-dark: #0c0c0c;        /* Hero background */
+  --bg-card: #121226;       /* Slightly deeper card bg */
+  --primary: #8b5cf6;       /* Hero purple */
+  --secondary: #9333ea;     /* Hero violet */
+  --accent: #ffffff;        /* Main text */
+  --text-muted: #cbd5e1;    /* Muted text */
 }
+
 
 /* ---------- GLOBAL ---------- */
 * {
@@ -208,6 +209,7 @@ section {
   }
 }
 
+
 /* ---------- CONTAINER ---------- */
 .about-container {
   max-width: 900px;
@@ -225,6 +227,12 @@ section {
   font-weight: 600;
   color: var(--primary);
   text-align: center;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.75);
+  transition: text-shadow 0.3s ease;
+}
+
+.about-heading:hover {
+  text-shadow: 0 0 30px rgba(139, 92, 246, 1);
 }
 
 /* ---------- ABOUT TEXT ---------- */
@@ -236,14 +244,38 @@ section {
   color: var(--text-muted);
 }
 
+/* Glow on scroll */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+  text-shadow: 0 0 14px rgba(139, 92, 246, 0.6);
+}
+
 /* ---------- CARDS ---------- */
 .about-card {
   width: 100%;
   background: var(--bg-card);
   padding: 1.5rem 2rem;
   border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Glow below the card instead of all around */
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  /* stronger glow only at the bottom */
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+}
+
+/* Remove old glow border */
+.about-card::before {
+  content: "";
+  display: none;
 }
 
 /* ---------- CARD TITLES ---------- */
@@ -257,17 +289,31 @@ section {
 /* ---------- EDUCATION ---------- */
 .edu-item {
   margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(139, 92, 246, 0.45);
+  transition: all 0.35s ease;
+}
+
+.edu-item:hover {
+  border-left-color: var(--secondary);
+  transform: translateX(6px);
 }
 
 .edu-item h4 {
   font-size: 1.05rem;
   font-weight: 500;
   color: var(--accent);
+  text-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
 }
 
 .edu-item p {
   font-size: 0.9rem;
   color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.edu-item:hover p {
+  color: var(--accent);
 }
 
 /* ---------- SKILLS ---------- */
@@ -288,6 +334,13 @@ section {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--accent);
   font-size: 0.85rem;
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 26px rgba(139, 92, 246, 0.95);
 }
 
 .skill-icon {
@@ -302,16 +355,11 @@ section {
   margin: 0.8rem 0 0.4rem;
 }
 
-/* ---------- FADE IN ANIMATION ---------- */
+/* ---------- FADE IN BASE ---------- */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -332,7 +380,33 @@ section {
 }
 
 .projects-list {
-  max-width: 900px;
+  max-width: 900px;/* ---------- CARDS ---------- */
+.about-card {
+  width: 100%;
+  background: var(--bg-card);
+  padding: 1.5rem 2rem;
+  border-radius: 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Glow below the card instead of all around */
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  /* stronger glow only at the bottom */
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+}
+
+/* Remove old glow border */
+.about-card::before {
+  content: "";
+  display: none;
+}
+
   margin: 3rem auto 0;
   display: flex;
   flex-direction: column;
@@ -521,27 +595,25 @@ section {
   color: var(--primary);
   font-size: 1.2rem;
 }
-/* Contact Info Container */
-.contact-info {
-  margin: 1.5rem 0 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  align-items: center;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-/* Individual Info Item */
+/* ---------- CONTACT DETAILS (EMAIL / PHONE / LOCATION) ---------- */
 .info-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  font-size: 1rem;               /* same size */
+  color: var(--text-muted);
+  transition: all 0.3s ease;
 }
 
-/* Links (Phone & Email) */
+/* Icons */
+.info-item .info-icon {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+/* Links (email & phone) */
 .info-item a {
-  color: #c4b5fd; /* soft purple */
+  color: #c4b5fd;                /* soft purple */
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -553,21 +625,32 @@ section {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -3px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #8b5cf6, #9333ea);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
-/* Hover effect */
+/* Hover effects */
+.info-item:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
 .info-item a:hover {
   color: #ffffff;
 }
 
 .info-item a:hover::after {
   width: 100%;
+}
+
+/* Location text (Maharashtra – non-clickable) */
+.info-item span {
+  color: #c4b5fd;
+  font-weight: 500;
 }
 
 /* ---------- RESUME BUTTON ---------- */
