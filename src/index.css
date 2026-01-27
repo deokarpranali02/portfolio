@@ -1,12 +1,11 @@
 :root {
-  --bg-dark: #0c0c0c;        /* Hero background */
+  --bg-dark: #0c0c0c;       /* Hero background */
   --bg-card: #121226;       /* Slightly deeper card bg */
   --primary: #8b5cf6;       /* Hero purple */
   --secondary: #9333ea;     /* Hero violet */
   --accent: #ffffff;        /* Main text */
   --text-muted: #cbd5e1;    /* Muted text */
 }
-
 
 /* ---------- GLOBAL ---------- */
 * {
@@ -31,7 +30,6 @@ section {
   padding: 2rem;
   flex-direction: column;
 }
-
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
@@ -67,7 +65,7 @@ section {
   right: 15%;
 }
 
-/* Corner portfolio */
+/* Corner portfolio text */
 .corner-portfolio {
   position: absolute;
   top: 20px;
@@ -79,11 +77,7 @@ section {
   z-index: 2;
 }
 
-.code-symbol {
-  color: var(--secondary);
-}
-
-/* Content */
+/* Hero content */
 .hero-content {
   text-align: center;
   max-width: 720px;
@@ -113,7 +107,7 @@ section {
   50% { transform: scale(1.05); }
 }
 
-/* Avatar */
+/* Avatar image */
 .hero-avatar {
   width: 100%;
   height: 100%;
@@ -135,26 +129,17 @@ section {
   margin-bottom: 0.8rem;
 }
 
-.code-keyword {
-  color: var(--secondary);
-}
+.code-keyword { color: var(--secondary); }
+.code-string { color: var(--primary); }
 
-.code-string {
-  color: var(--primary);
-}
-
-/* Name */
+/* Name and Role */
 .hero-name {
   font-size: 2.7rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
 }
+.hero-name span { color: var(--primary); }
 
-.hero-name span {
-  color: var(--primary);
-}
-
-/* Role */
 .hero-role {
   font-size: 1.2rem;
   font-weight: 400;
@@ -171,7 +156,7 @@ section {
   margin: 0 auto 2rem;
 }
 
-/* Buttons */
+/* Hero Buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -202,95 +187,102 @@ section {
   background: var(--primary);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .hero-name {
-    font-size: 2.2rem;
-  }
+  .hero-name { font-size: 2.2rem; }
+}
+:root {
+  --bg-dark: #0c0c0c;        /* Background */
+  --bg-card: #121226;       /* Card background */
+  --primary: #8b5cf6;       /* Purple primary */
+  --secondary: #9333ea;     /* Purple secondary */
+  --accent: #ffffff;        /* Main text */
+  --text-muted: #cbd5e1;    /* Muted text */
 }
 
+/* ---------- GLOBAL ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
 
-/* ---------- CONTAINER ---------- */
-.about-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem 1rem;
+body {
+  background: var(--bg-dark);
+  color: var(--accent);
+}
+
+/* ---------- ABOUT SECTION ---------- */
+.about {
+  padding: 4rem 2rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.about-container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   gap: 2.5rem;
 }
 
-/* ---------- ABOUT ME HEADING ---------- */
+/* ---------- HEADING ---------- */
 .about-heading {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 900;
   color: var(--primary);
   text-align: center;
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.75);
-  transition: text-shadow 0.3s ease;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .about-heading:hover {
-  text-shadow: 0 0 30px rgba(139, 92, 246, 1);
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+  transform: translateY(-3px) scale(1.03);
 }
 
-/* ---------- ABOUT TEXT ---------- */
+/* ---------- DESCRIPTION ---------- */
 .about-text {
-  max-width: 750px;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.7;
   color: var(--text-muted);
-}
-
-/* Glow on scroll */
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-  text-shadow: 0 0 14px rgba(139, 92, 246, 0.6);
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 /* ---------- CARDS ---------- */
 .about-card {
-  width: 100%;
   background: var(--bg-card);
-  padding: 1.5rem 2rem;
+  padding: 1.8rem 2rem;
   border-radius: 18px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* Glow below the card instead of all around */
   box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
-  transform: translateY(-4px);
-  /* stronger glow only at the bottom */
   box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
-}
-
-/* Remove old glow border */
-.about-card::before {
-  content: "";
-  display: none;
+  transform: translateY(-4px);
 }
 
 /* ---------- CARD TITLES ---------- */
 .about-title {
   font-size: 1.4rem;
-  font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 /* ---------- EDUCATION ---------- */
 .edu-item {
-  margin-bottom: 0.8rem;
   padding-left: 1rem;
   border-left: 3px solid rgba(139, 92, 246, 0.45);
+  margin-bottom: 0.8rem;
   transition: all 0.35s ease;
 }
 
@@ -300,15 +292,15 @@ section {
 }
 
 .edu-item h4 {
-  font-size: 1.05rem;
-  font-weight: 500;
   color: var(--accent);
+  font-weight: 500;
+  font-size: 1.05rem;
   text-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
 }
 
 .edu-item p {
-  font-size: 0.9rem;
   color: var(--text-muted);
+  font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
@@ -316,13 +308,13 @@ section {
   color: var(--accent);
 }
 
-/* ---------- SKILLS ---------- */
+/* ---------- TECHNICAL SKILLS ---------- */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.6rem;
   margin-bottom: 1rem;
+  justify-content: center;
 }
 
 .skill-item {
@@ -347,7 +339,7 @@ section {
   font-size: 0.9rem;
 }
 
-/* ---------- SUB HEADINGS ---------- */
+/* Sub-headings for Tools / Databases */
 .sub-heading {
   font-size: 0.95rem;
   font-weight: 500;
@@ -355,17 +347,23 @@ section {
   margin: 0.8rem 0 0.4rem;
 }
 
-/* ---------- FADE IN BASE ---------- */
+/* ---------- FADE-IN ANIMATION ---------- */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
 }
 
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+  text-shadow: 0 0 14px rgba(139, 92, 246, 0.6);
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 700px) {
   .about-heading {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .about-title {
@@ -373,47 +371,40 @@ section {
   }
 }
 
-/* ---------- PROJECTS (VERTICAL) ---------- */
+/* ---------- PROJECTS SECTION ---------- */
 .projects {
   background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
   text-align: center;
+  padding: 4rem 2rem;
 }
 
+/* ---------- PROJECTS TITLE ---------- */
+.projects .animated-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #8B5CF6, #C084FC); /* purple gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.projects .animated-header h2:hover {
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* ---------- PROJECT LIST ---------- */
 .projects-list {
-  max-width: 900px;/* ---------- CARDS ---------- */
-.about-card {
-  width: 100%;
-  background: var(--bg-card);
-  padding: 1.5rem 2rem;
-  border-radius: 18px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* Glow below the card instead of all around */
-  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
-}
-
-.about-card:hover {
-  transform: translateY(-4px);
-  /* stronger glow only at the bottom */
-  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
-}
-
-/* Remove old glow border */
-.about-card::before {
-  content: "";
-  display: none;
-}
-
+  max-width: 900px;
   margin: 3rem auto 0;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-/* Project Row */
+/* ---------- PROJECT ROW ---------- */
 .project-row {
   background: var(--bg-card);
   padding: 2rem;
@@ -430,7 +421,7 @@ section {
   box-shadow: 0 25px 55px rgba(139, 92, 246, 0.7);
 }
 
-/* Icon */
+/* ---------- PROJECT ICON ---------- */
 .project-icon {
   min-width: 70px;
   height: 70px;
@@ -444,9 +435,10 @@ section {
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
 }
 
-/* Content */
+/* ---------- PROJECT CONTENT ---------- */
 .project-content {
   text-align: left;
+  flex: 1;
 }
 
 .project-content h3 {
@@ -462,7 +454,7 @@ section {
   margin-bottom: 1rem;
 }
 
-/* Tech */
+/* ---------- TECH STACK ---------- */
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
@@ -490,40 +482,6 @@ section {
     text-align: center;
   }
 }
-
-/* ---------- Clean Bold Headings ---------- */
-.animated-header {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 2rem;
-}
-
-.animated-header h2,
-.animated-header h3 {
-  font-weight: 900;
-  letter-spacing: 2px;
-  display: inline-block;
-  color: var(--primary);
-  text-transform: uppercase;
-  line-height: 1.2;
-  transition: transform 0.3s ease;
-}
-
-/* Hover pop effect */
-.animated-header h2:hover,
-.animated-header h3:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-/* Sizes */
-.animated-header h2 {
-  font-size: 3rem;
-}
-
-.animated-header h3 {
-  font-size: 2.2rem;
-}
-
 /* ---------- CONTACT SECTION ---------- */
 .contact {
   background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
@@ -532,17 +490,23 @@ section {
   position: relative;
 }
 
-/* Section Title */
+/* ---------- SECTION TITLE ---------- */
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, #8B5CF6, #C084FC); /* purple gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Contact Text */
+.section-title:hover {
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ---------- CONTACT DESCRIPTION ---------- */
 .contact-text {
   max-width: 650px;
   margin: 0 auto 2rem;
@@ -560,14 +524,6 @@ section {
   font-weight: 600;
 }
 
-/* Fade Up Animation */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ---------- CONTACT INFO ---------- */
 .contact-info {
   display: flex;
@@ -580,9 +536,9 @@ section {
 .info-item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   font-size: 1rem;
-  color: var(--text-muted);
+  color: #c4b5fd; /* soft purple */
   transition: all 0.3s ease;
 }
 
@@ -592,35 +548,19 @@ section {
 }
 
 .info-icon {
-  color: var(--primary);
-  font-size: 1.2rem;
-}
-/* ---------- CONTACT DETAILS (EMAIL / PHONE / LOCATION) ---------- */
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;               /* same size */
-  color: var(--text-muted);
-  transition: all 0.3s ease;
-}
-
-/* Icons */
-.info-item .info-icon {
   font-size: 1.2rem;
   color: var(--primary);
 }
 
 /* Links (email & phone) */
 .info-item a {
-  color: #c4b5fd;                /* soft purple */
+  color: #c4b5fd; /* soft purple */
   text-decoration: none;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
-/* Underline animation */
 .info-item a::after {
   content: "";
   position: absolute;
@@ -633,12 +573,6 @@ section {
   border-radius: 2px;
 }
 
-/* Hover effects */
-.info-item:hover {
-  color: var(--primary);
-  transform: translateY(-2px);
-}
-
 .info-item a:hover {
   color: #ffffff;
 }
@@ -647,7 +581,7 @@ section {
   width: 100%;
 }
 
-/* Location text (Maharashtra – non-clickable) */
+/* Location text */
 .info-item span {
   color: #c4b5fd;
   font-weight: 500;
@@ -693,7 +627,7 @@ section {
   gap: 1.3rem;
 }
 
-/* Input Group */
+/* Input group */
 .input-group {
   display: flex;
   align-items: center;
@@ -714,7 +648,6 @@ section {
   font-size: 1.2rem;
 }
 
-/* Inputs */
 .input-group input,
 .input-group textarea {
   width: 100%;
@@ -754,6 +687,14 @@ section {
   transform: scale(0.96);
 }
 
+/* ---------- FADE UP ANIMATION ---------- */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 600px) {
   .section-title {
@@ -768,7 +709,6 @@ section {
     gap: 1rem;
   }
 }
-
 /* ---------- FOOTER ---------- */
 .footer {
   background: var(--bg-card);
@@ -777,6 +717,7 @@ section {
   border-top: 1px solid rgba(139,92,246,0.2);
 }
 
+/* Footer Text */
 .footer-text {
   color: var(--text-muted);
   font-size: 0.9rem;
@@ -788,22 +729,24 @@ section {
   font-weight: 500;
 }
 
+/* Heart animation */
 .heart {
   color: #ef4444;
   margin: 0 0.3rem;
   animation: heartbeat 1.5s infinite;
 }
 
-/* Heart animation */
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.3); }
 }
 
+/* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1.2rem;
+  margin-top: 1rem;
 }
 
 .social-links a {
@@ -815,4 +758,23 @@ section {
 .social-links a:hover {
   color: var(--primary);
   transform: translateY(-4px);
+}
+
+/* Optional: small copyright notice */
+.footer small {
+  display: block;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Optional hover effect on all links in footer */
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--secondary);
 }
