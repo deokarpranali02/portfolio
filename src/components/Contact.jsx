@@ -4,34 +4,38 @@ import { FaUser, FaEnvelope, FaCommentDots, FaDownload } from "react-icons/fa";
 const Contact = () => {
   return (
     <section className="contact" id="contact">
+
+      {/* Section Title */}
       <h2 className="section-title">Contact Me</h2>
 
-      <p className="contact-text animated-text">
+      {/* Description */}
+      <p className="contact-text">
         Hi! I’m <span className="highlight-name">Pranali</span>, a BCA student exploring web development.
         Feel free to connect, collaborate, or just chat! 👋
       </p>
 
       {/* Contact Info */}
-      <div class="info-item">
-      <span class="info-icon">📧</span>
-       <a href="mailto:deokarpranali02@gemail.com">deokarpranali02@gmail.com</a>
-</div>
+      <div className="contact-info">
+        <div className="info-item">
+          <span className="info-icon">📧</span>
+          <a href="mailto:deokarpranali02@gmail.com">deokarpranali02@gmail.com</a>
+        </div>
 
-      <div class="info-item">
-      <span class="info-icon">📞</span>
-      <a href="tel:+91-8623072913">+91 8623072913</a>
-</div>
+        <div className="info-item">
+          <span className="info-icon">📞</span>
+          <a href="tel:+918623072913">+91 8623072913</a>
+        </div>
 
-       <div class="info-item">
-       <span class="info-icon">📍</span>
-       <span>Maharashtra, India</span>
-</div>
-
+        <div className="info-item">
+          <span className="info-icon">📍</span>
+          <span>Maharashtra, India</span>
+        </div>
+      </div>
 
       {/* Resume Button */}
       <div className="contact-actions">
         <a href="/resume.pdf" download className="resume-btn">
-          <FaDownload /> Download Resume
+          <FaDownload className="resume-icon" /> Download Resume
         </a>
       </div>
 
