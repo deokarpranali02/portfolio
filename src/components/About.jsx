@@ -45,7 +45,7 @@ const About = () => {
   return (
     <section className="about" id="about">
       <div className="about-container">
-
+       
         {/* Heading */}
         <h2 className="about-heading fade-in">ABOUT ME</h2>
 
