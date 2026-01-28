@@ -301,29 +301,59 @@ section {
   color: var(--accent);
   margin-bottom: 1rem;
 }
-/* ---------- ABOUT TEXT ---------- */
+//* ---------- ABOUT SECTION ---------- */
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+/* Heading */
+.about-heading {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Description */
 .about-text {
-  max-width: 750px;
+  max-width: 760px;
   text-align: center;
   font-size: 1rem;
   line-height: 1.7;
-  color: #e6e6e6;  /* softer white/dark-white */
+  color: #e6e6e6;  /* soft white */
 }
 
-/* ---------- EDUCATION ---------- */
-.edu-item h4 {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #f5f5f5;  /* lighter dark-white for college/school names */
+/* Cards */
+.about-card {
+  width: 100%;
+  background: var(--bg-card);
+  padding: 1.6rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.edu-item p {
-  font-size: 0.9rem;
-  color: #d9d9d9;  /* dark-white for degrees, CGPA, years */
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px rgba(139, 92, 246, 0.55);
 }
 
+/* Card Title */
+.about-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
 
-/* ---------- EDUCATION ---------- */
+/* Education */
 .edu-item {
   margin-bottom: 0.9rem;
 }
@@ -331,15 +361,15 @@ section {
 .edu-item h4 {
   font-size: 1.05rem;
   font-weight: 500;
-  color: var(--accent);
+  color: #f5f5f5;  /* dark-white for college/school names */
 }
 
 .edu-item p {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: #d9d9d9;  /* dark-white for degrees and years */
 }
 
-/* ---------- SKILLS ---------- */
+/* Skills Grid */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -356,14 +386,23 @@ section {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--accent);
   font-size: 0.85rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
   transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.6);
 }
 
-/* ---------- FADE IN ---------- */
+/* Sub-headings for tools/databases */
+.sub-heading {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* ---------- FADE-IN EFFECT ---------- */
 .fade-in {
   opacity: 0;
   transform: translateY(18px);
@@ -375,7 +414,7 @@ section {
   transform: translateY(0);
 }
 
-/* ---------- ABOUT RESPONSIVE ---------- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .about-heading {
     font-size: 2rem;
@@ -395,6 +434,7 @@ section {
     font-size: 0.95rem;
   }
 }
+
 /* ---------- PROJECTS SECTION ---------- */
 .projects {
   background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
